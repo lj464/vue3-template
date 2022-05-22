@@ -1,0 +1,57 @@
+{
+    "name": "tempalte-vue3",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "mock": "json-server --watch --port 1234 data.json"
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "core-js": "^3.6.5",
+        "element-plus": "^2.1.11",
+        "sass": "^1.51.0",
+        "sass-loader": "^10.0.0",
+        "scss": "^0.2.4",
+        "scss-loader": "^0.0.1",
+        "svg-sprite-loader": "^6.0.11",
+        "vue": "^3.2.8",
+        "vue-router": "^4.0.11",
+        "vuex": "^4.0.2"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.13",
+        "@vue/cli-plugin-eslint": "~4.5.13",
+        "@vue/cli-service": "~4.5.13",
+        "@vue/compiler-sfc": "^3.0.0",
+        "@vue/eslint-config-prettier": "^6.0.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-vue": "^7.0.0",
+        "mockjs": "^1.1.0",
+        "prettier": "^2.2.1"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/vue3-essential",
+            "eslint:recommended",
+            "@vue/prettier"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
+}
