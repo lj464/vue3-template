@@ -5,7 +5,7 @@ import App from "./App.vue";
 import './permission'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import '@/assets/style/index.min.css'
+import '@/assets/style/index.scss'
 import installIcons from '@/icons'
 import store from './store/index'
 import router from './router'

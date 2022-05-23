@@ -61,7 +61,7 @@
         try {
           let res = await store.dispatch("login/login", numberValidateForm);
           if (res) {
-            router.push("/layout");
+            router.push("/");
             // 记录成功登录时间
             setTimeStamp();
           } else {

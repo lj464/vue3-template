@@ -1,24 +1,36 @@
 <template>
   <!-- 一级 menu 菜单 -->
-  <el-menu :default-openeds="['1', '3']">
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon>
-          <message />
-        </el-icon>Navigator One
-      </template>
-      <el-menu-item-group>
-        <template #title>Group 1</template>
-        <el-menu-item index="1-1">Option 1</el-menu-item>
-        <el-menu-item index="1-2">Option 2</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group 2">
-        <el-menu-item index="1-3">Option 3</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title>Option4</template>
-        <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
+  <el-menu class="scroll" :default-active="activePath" :unique-opened="true" router
+    :background-color="$store.getters.cssVar.menuBg" :collapse="!$store.getters.sidebarOpened"
+    :text-color="$store.getters.cssVar.menuText" :active-text-color="$store.getters.cssVar.menuActiveText">
+    <el-scrollbar>
+      <sidemenu-item v-for="(route) in routeData " :key="route.path" :route="route" />
+    </el-scrollbar>
   </el-menu>
+
 </template>
+<script setup>
+import { useRouter, useRoute } from 'vue-router'
+import { filterRouters, generateMenus } from '@/utils/route.js'
+import { computed } from 'vue'
+import sidemenuItem from './sidemenuItem.vue'
+const router = useRouter()
+const Allroutes = router.getRoutes()
+
+const routeData = computed(() => {
+  let filroutes = filterRouters(Allroutes)
+  return generateMenus(filroutes)
+})
+const route = useRoute()
+const activePath = computed(() => {
+  const { path } = route
+  return path
+})
+</script>
+<style   scoped >
+.scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+</style>

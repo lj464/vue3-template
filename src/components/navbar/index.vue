@@ -2,6 +2,7 @@
   <div class="navbar">
     <hamburger class="hamburger-container" />
     <!-- 头像 -->
+    <breadcrumb class="breadcrumb" />
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
         <el-avatar
@@ -26,6 +27,7 @@
 <script setup>
   import { useStore } from "vuex";
   import Hamburger from "@/components/Hamburger";
+  import Breadcrumb from "@/components/Breadcrumb";
   const store = useStore();
   // store.dispatch('login/layout')
   const loginout = () => {
@@ -57,5 +59,9 @@
       margin-right: 20px;
       margin-top: 5px;
     }
+  }
+  .breadcrumb {
+    float: left;
+    line-height: 50px;
   }
 </style>

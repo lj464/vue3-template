@@ -1,3 +1,6 @@
+@import './variables.scss';
+@import './element.scss';
+
 html,
 body {
     height: 100%;
@@ -49,6 +52,3 @@ div:focus {
     }
 }
 
-.el-avatar {
-    --el-avatar-bg-color: none !important;
-}
