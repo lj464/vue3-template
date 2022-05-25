@@ -5,6 +5,7 @@ export default {
     hasUserInfo: state => {
         return JSON.stringify(state.user.userInfo) !== '{}'
     },
-    cssVar:()=>variables,
-    sidebarOpened:(state)=>state.user.siderOped
+    cssVar: () => variables,
+    sidebarOpened: (state) => state.user.siderOped,
+    language: state => state.user.currentlan,
 };
