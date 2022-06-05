@@ -1,6 +1,9 @@
-import { setItem, getItem, removeAllItem } from '@/utils/storag.js'
+import { setItem, getItem,removeItem } from '@/utils/storag.js'
 import { ElMessage } from 'element-plus'
 import router from '@/router/index'
+// import i18n from '@/i18n'
+// import { useI18n } from 'vue-i18n'
+// const i18n = useI18n()
 export default {
     namespaced: true,
     state: {
@@ -29,7 +32,8 @@ export default {
         },
         loginout({ commit }) {
             commit('setToken', '')
-            removeAllItem()
+            removeItem('token')
+            removeItem('TIME_STAMP')
             router.push('/login')
         }
     }

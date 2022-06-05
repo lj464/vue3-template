@@ -8,10 +8,10 @@
         class="demo-ruleForm"
         :rules="loginRules"
       >
-        <el-form-item label="用户名" prop="user">
+        <el-form-item :label="$t('msg.login.user')" prop="user">
           <el-input v-model="numberValidateForm.user" type="text" autocomplete="off" />
         </el-form-item>
-        <el-form-item label="密码" prop="password">
+        <el-form-item :label="$t('msg.login.pass')" prop="password">
           <el-input
             v-model="numberValidateForm.password"
             type="password"
@@ -24,7 +24,7 @@
             class="login-btn"
             @click="submitForm(formRef)"
             :loading="loading"
-            >登录</el-button
+            >{{ $t('msg.login.loginBtn')}}</el-button
           >
         </el-form-item>
       </el-form>
@@ -38,8 +38,11 @@
   import { useStore } from "vuex";
   import { useRouter } from "vue-router";
   import { setTimeStamp } from "@/utils/auth.js";
+  import { useI18n } from 'vue-i18n'
+  // 验证规则
+const i18n = useI18n()
   const loginRules = ref({
-    user: [{ required: true, message: "请输入用户名" }],
+    user: [{ required: true, message:i18n.t('msg.login.usernameRule') }],
     password: [{ required: true, validator: validatePass() }],
   });
 

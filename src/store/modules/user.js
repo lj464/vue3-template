@@ -1,11 +1,11 @@
 import { getUserData } from "@/api/user.js";
-import { setItem } from '@/utils/storag.js'
+import { setItem , getItem } from '@/utils/storag.js'
 export default {
     namespaced: true,
     state: {
         userInfo: {},
         siderOped: true,
-        currentlan: "en"
+        currentlan: getItem('LANG') || 'zh'
     },
     mutations: {
         setUserInfo(state, payload) {

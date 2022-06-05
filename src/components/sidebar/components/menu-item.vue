@@ -1,11 +1,12 @@
 <template>
     <div>
         <svg-icon :icon="icon" class="menu-item"></svg-icon>
-        <span >{{ title }}</span>
+        <span >{{ generateTitle(title) }}</span>
     </div>
 </template>
 <script setup>
 import { defineProps } from 'vue'
+import { generateTitle } from '@/utils/i18n'
 defineProps({
     icon: {
         type: String,
